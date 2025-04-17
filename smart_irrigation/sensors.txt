@@ -1,0 +1,108 @@
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <DHT.h>
+#include <ArduinoJson.h>
+
+const char* ssid = "krithik";
+const char* password = "12345678";
+
+#define DHTPIN 4
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
+
+#define SOIL_PIN 34
+#define RAIN_PIN 35
+
+const char* updateURL = "http://192.168.30.24:8000/update-sensor";
+const char* getURL = "http://192.168.30.24:8000/get-sensor";
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+  
+  WiFi.begin(ssid, password);
+  Serial.print("Connecting to WiFi");
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+  Serial.println("\nConnected!");
+  Serial.print("Arduino IP: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+  float temp = dht.readTemperature();
+  float humidity = dht.readHumidity();
+  int soilRaw = analogRead(SOIL_PIN);
+  int rainRaw = analogRead(RAIN_PIN);
+
+  if (isnan(temp) || isnan(humidity)) {
+    Serial.println("Failed to read from DHT sensor!");
+    delay(5000);
+    return;
+  }
+
+  float soil = map(soilRaw, 4095, 0, 0, 100);
+  float rain = map(rainRaw, 4095, 0, 0, 100);
+  int israin = 0;
+  if (rain > 50) {
+    israin = 1;
+  }
+  
+  float localDryness = (0.4 * temp + 0.3 * (100 - humidity) + 0.2 * (100 - soil)) * (1 - israin);
+
+  Serial.printf("Local T: %.2f, H: %.2f, Soil: %.2f, Rain: %.2f, Dryness: %.2f\n", temp, humidity, soil, rain, localDryness);
+
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient httpUpdate;
+    httpUpdate.begin(updateURL);
+    httpUpdate.addHeader("Content-Type", "application/json");
+
+    StaticJsonDocument<200> doc;
+    doc["temperature"] = temp;
+    doc["humidity"] = humidity;
+    doc["soil"] = soil;
+    doc["rain"] = rain;
+    doc["dryness"] = localDryness;
+
+    String requestBody;
+    serializeJson(doc, requestBody);
+
+    int updateCode = httpUpdate.PUT(requestBody);
+    if (updateCode > 0) {
+      Serial.printf("Update Response code: %d\n", updateCode);
+      String updateResponse = httpUpdate.getString();
+      Serial.println("Update Response: " + updateResponse);
+    } else {
+      Serial.printf("Update failed: %s\n", httpUpdate.errorToString(updateCode).c_str());
+    }
+    httpUpdate.end();
+
+    HTTPClient httpGet;
+    httpGet.begin(getURL);
+    
+    int getCode = httpGet.GET();
+    if (getCode > 0) {
+      Serial.printf("HTTP Response code: %d\n", getCode);
+      String response = httpGet.getString();
+      Serial.println("Server Response: " + response);
+
+      DynamicJsonDocument docGet(200);
+      deserializeJson(docGet, response);
+      float serverDryness = docGet["dryness"].as<float>();
+      const char* serverCropType = docGet["crop_type"].as<const char*>();
+      if (!isnan(serverDryness)) {
+        localDryness = serverDryness;  // Override with server dryness
+      }
+      Serial.printf("Updated Dryness: %.2f, Crop Type: %s\n", localDryness, serverCropType);
+    } else {
+      Serial.printf("HTTP Request failed: %s\n", httpGet.errorToString(getCode).c_str());
+    }
+    httpGet.end();
+  } else {
+    Serial.println("WiFi Disconnected");
+  }
+
+  delay(5000);
+}
