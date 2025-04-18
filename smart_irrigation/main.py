@@ -55,17 +55,18 @@ def get_db_connection():
     except Error as e:
         print(f"Error connecting to MySQL: {e}")
         return None
-
 def store_sensor_data(data):
     connection = get_db_connection()
     if connection:
         cursor = connection.cursor()
         try:
+            crop_type = data.get("crop_type", "wheat")
+            threshold = crop_thresholds.get(crop_type, 35)
+            print(f"Storing data - crop_type: {crop_type}, threshold: {threshold}")
             sql = """
                 INSERT INTO sensor_data (temperature, humidity, soil, rain, dryness, motor_status, crop_type, threshold, timestamp)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, NOW())
             """
-            threshold = crop_thresholds.get(data["crop_type"], 35)  # Get threshold based on crop type
             cursor.execute(sql, (
                 data["temperature"],
                 data["humidity"],
@@ -73,7 +74,7 @@ def store_sensor_data(data):
                 data["rain"],
                 data["dryness"],
                 data["motor_status"],
-                data["crop_type"],
+                crop_type,
                 threshold
             ))
             connection.commit()
@@ -82,7 +83,6 @@ def store_sensor_data(data):
         finally:
             cursor.close()
             connection.close()
-
 # Updated crop thresholds
 crop_thresholds = {
     "wheat": 45,
