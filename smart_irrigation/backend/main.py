@@ -246,7 +246,7 @@ async def add_crop(payload: CropAddPayload):
         # Broadcast updated crop list to WebSocket clients
         for client in connected_clients:
             try:
-                await client.send_text(json.dumps({"crop_list": list(crop_thresholds.keys())}))
+                await client.send_text(json.dumps({"crop_thresholds": crop_thresholds}))
             except Exception:
                 connected_clients.remove(client)
         return {"status": f"Crop {crop_name} added with threshold {threshold}"}
@@ -295,7 +295,7 @@ async def delete_crop(payload: CropAddPayload):
         # Broadcast updated crop list and sensor data to WebSocket clients
         for client in connected_clients:
             try:
-                await client.send_text(json.dumps({"crop_list": list(crop_thresholds.keys())}))
+                await client.send_text(json.dumps({"crop_thresholds": crop_thresholds}))
                 await client.send_text(json.dumps(sensor_data))
             except Exception:
                 connected_clients.remove(client)
