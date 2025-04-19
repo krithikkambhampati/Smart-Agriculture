@@ -6,6 +6,7 @@ from fastapi.staticfiles import StaticFiles
 import json
 import mysql.connector
 from mysql.connector import Error
+from fastapi import HTTPException
 
 app = FastAPI()
 
@@ -84,18 +85,25 @@ def store_sensor_data(data):
             cursor.close()
             connection.close()
 # Updated crop thresholds
-crop_thresholds = {
-    "wheat": 45,
-    "sugarcane": 40,
-    "rice":35,
-    "maize":55,
-    "cotton":50,
-    "pulses":60,
-    "millets":65,
-    "mustard":50,
-    "groundnut":55,
-    "potato":40
-}
+crop_thresholds = {}
+
+def load_crops_from_db():
+    connection = get_db_connection()
+    if connection:
+        cursor = connection.cursor(dictionary=True)
+        try:
+            cursor.execute("SELECT name, threshold FROM crops")
+            crops = cursor.fetchall()
+            for crop in crops:
+                crop_thresholds[crop['name']] = crop['threshold']
+        except Error as e:
+            print(f"Error loading crops from database: {e}")
+        finally:
+            cursor.close()
+            connection.close()
+
+# Call at startup
+load_crops_from_db()
 
 @app.put("/update-sensor")
 async def update_sensor(payload: SensorPayload):
@@ -202,6 +210,101 @@ async def websocket_endpoint(websocket: WebSocket):
         connected_clients.remove(websocket)
         await websocket.close()
 
+
+
+
+
+class CropAddPayload(BaseModel):
+    name: str
+    threshold: float
+
+@app.post("/add-crop")
+async def add_crop(payload: CropAddPayload):
+    global crop_thresholds
+    crop_name = payload.name.lower().strip()
+    threshold = payload.threshold
+
+    # Validate input
+    if not crop_name or len(crop_name) > 50:
+        raise HTTPException(status_code=400, detail="Crop name must be between 1 and 50 characters")
+    if not (0 <= threshold <= 100):
+        raise HTTPException(status_code=400, detail="Threshold must be between 0 and 100")
+    if crop_name in crop_thresholds:
+        raise HTTPException(status_code=400, detail="Crop already exists")
+
+    # Add to database
+    connection = get_db_connection()
+    if not connection:
+        raise HTTPException(status_code=500, detail="Database connection failed")
+    
+    cursor = connection.cursor()
+    try:
+        sql = "INSERT INTO crops (name, threshold, is_default) VALUES (%s, %s, %s)"
+        cursor.execute(sql, (crop_name, threshold, False))
+        connection.commit()
+        crop_thresholds[crop_name] = threshold
+        # Broadcast updated crop list to WebSocket clients
+        for client in connected_clients:
+            try:
+                await client.send_text(json.dumps({"crop_list": list(crop_thresholds.keys())}))
+            except Exception:
+                connected_clients.remove(client)
+        return {"status": f"Crop {crop_name} added with threshold {threshold}"}
+    except Error as e:
+        raise HTTPException(status_code=500, detail=f"Error adding crop: {e}")
+    finally:
+        cursor.close()
+        connection.close()
+
+@app.post("/delete-crop")
+async def delete_crop(payload: CropAddPayload):
+    global crop_thresholds, sensor_data
+    crop_name = payload.name.lower().strip()
+
+    # Validate input
+    if crop_name not in crop_thresholds:
+        raise HTTPException(status_code=400, detail="Crop does not exist")
+    
+    # Check if crop is default
+    connection = get_db_connection()
+    if not connection:
+        raise HTTPException(status_code=500, detail="Database connection failed")
+    
+    cursor = connection.cursor()
+    try:
+        cursor.execute("SELECT is_default FROM crops WHERE name = %s", (crop_name,))
+        result = cursor.fetchone()
+        if result and result[0]:
+            raise HTTPException(status_code=400, detail="Cannot delete default crop")
+        
+        # Delete from database
+        cursor.execute("DELETE FROM crops WHERE name = %s", (crop_name,))
+        connection.commit()
+        
+        # Remove from in-memory dictionary
+        del crop_thresholds[crop_name]
+        
+        # If deleted crop is currently selected, revert to default (wheat)
+        if sensor_data["crop_type"] == crop_name:
+            sensor_data["crop_type"] = "wheat"
+            threshold = crop_thresholds["wheat"]
+            if manual_override is None:
+                sensor_data["motor_status"] = "on" if sensor_data.get("dryness", 0) > threshold else "off"
+            store_sensor_data(sensor_data)
+        
+        # Broadcast updated crop list and sensor data to WebSocket clients
+        for client in connected_clients:
+            try:
+                await client.send_text(json.dumps({"crop_list": list(crop_thresholds.keys())}))
+                await client.send_text(json.dumps(sensor_data))
+            except Exception:
+                connected_clients.remove(client)
+        return {"status": f"Crop {crop_name} deleted"}
+    except Error as e:
+        raise HTTPException(status_code=500, detail=f"Error deleting crop: {e}")
+    finally:
+        cursor.close()
+        connection.close()
 
 app.mount("/static", StaticFiles(directory="../static"), name="static")
 app.mount("/", StaticFiles(directory="../frontend", html=True), name="frontend")
