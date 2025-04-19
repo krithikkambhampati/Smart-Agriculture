@@ -30,8 +30,8 @@ def fetch_last_100_data_points():
         query = """
             SELECT timestamp, temperature, humidity, soil, rain, dryness, motor_status
             FROM sensor_data
-            ORDER BY timestamp DESC
-            LIMIT 100
+            ORDER BY timestamp ASC
+            LIMIT 200
         """
         cursor.execute(query)
         data = cursor.fetchall()

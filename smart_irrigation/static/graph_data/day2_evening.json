@@ -1,0 +1,1802 @@
+[
+  {
+    "timestamp": "2025-04-19 17:15:01",
+    "temperature": 29.1,
+    "humidity": 61.0,
+    "soil": 72.0,
+    "rain": 0.0,
+    "dryness": 28.94,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:15:16",
+    "temperature": 29.1,
+    "humidity": 61.0,
+    "soil": 72.0,
+    "rain": 0.0,
+    "dryness": 28.94,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:15:18",
+    "temperature": 28.8,
+    "humidity": 61.0,
+    "soil": 72.0,
+    "rain": 0.0,
+    "dryness": 28.82,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:15:36",
+    "temperature": 28.1,
+    "humidity": 63.0,
+    "soil": 72.0,
+    "rain": 0.0,
+    "dryness": 27.94,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:15:53",
+    "temperature": 28.0,
+    "humidity": 63.0,
+    "soil": 72.0,
+    "rain": 0.0,
+    "dryness": 27.9,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:16:09",
+    "temperature": 27.7,
+    "humidity": 66.0,
+    "soil": 72.0,
+    "rain": 12.0,
+    "dryness": 26.88,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:16:26",
+    "temperature": 27.4,
+    "humidity": 66.0,
+    "soil": 72.0,
+    "rain": 9.0,
+    "dryness": 26.76,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:16:44",
+    "temperature": 27.0,
+    "humidity": 68.0,
+    "soil": 72.0,
+    "rain": 10.0,
+    "dryness": 26.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:17:01",
+    "temperature": 26.7,
+    "humidity": 70.0,
+    "soil": 72.0,
+    "rain": 10.0,
+    "dryness": 25.28,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:17:18",
+    "temperature": 26.7,
+    "humidity": 70.0,
+    "soil": 72.0,
+    "rain": 14.0,
+    "dryness": 25.28,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:17:38",
+    "temperature": 26.3,
+    "humidity": 72.0,
+    "soil": 73.0,
+    "rain": 25.0,
+    "dryness": 24.32,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:17:56",
+    "temperature": 26.0,
+    "humidity": 72.0,
+    "soil": 73.0,
+    "rain": 31.0,
+    "dryness": 24.2,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:18:13",
+    "temperature": 25.6,
+    "humidity": 74.0,
+    "soil": 73.0,
+    "rain": 31.0,
+    "dryness": 23.44,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:18:33",
+    "temperature": 25.6,
+    "humidity": 75.0,
+    "soil": 73.0,
+    "rain": 29.0,
+    "dryness": 23.14,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:18:56",
+    "temperature": 25.2,
+    "humidity": 76.0,
+    "soil": 73.0,
+    "rain": 30.0,
+    "dryness": 22.68,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:19:14",
+    "temperature": 24.9,
+    "humidity": 77.0,
+    "soil": 73.0,
+    "rain": 30.0,
+    "dryness": 22.26,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:19:31",
+    "temperature": 24.9,
+    "humidity": 79.0,
+    "soil": 73.0,
+    "rain": 40.0,
+    "dryness": 21.66,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:19:48",
+    "temperature": 24.7,
+    "humidity": 80.0,
+    "soil": 73.0,
+    "rain": 40.0,
+    "dryness": 21.28,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:20:05",
+    "temperature": 24.7,
+    "humidity": 80.0,
+    "soil": 73.0,
+    "rain": 44.0,
+    "dryness": 21.28,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:20:21",
+    "temperature": 24.5,
+    "humidity": 81.0,
+    "soil": 73.0,
+    "rain": 48.0,
+    "dryness": 20.9,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:20:38",
+    "temperature": 24.5,
+    "humidity": 82.0,
+    "soil": 73.0,
+    "rain": 51.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:21:23",
+    "temperature": 24.2,
+    "humidity": 84.0,
+    "soil": 73.0,
+    "rain": 53.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:22:03",
+    "temperature": 24.0,
+    "humidity": 85.0,
+    "soil": 74.0,
+    "rain": 54.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:22:23",
+    "temperature": 26.8,
+    "humidity": 86.0,
+    "soil": 73.0,
+    "rain": 58.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:22:46",
+    "temperature": 26.8,
+    "humidity": 88.0,
+    "soil": 72.0,
+    "rain": 58.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:23:03",
+    "temperature": 26.8,
+    "humidity": 89.0,
+    "soil": 72.0,
+    "rain": 59.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:23:21",
+    "temperature": 26.8,
+    "humidity": 89.0,
+    "soil": 72.0,
+    "rain": 60.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:23:39",
+    "temperature": 26.8,
+    "humidity": 89.0,
+    "soil": 72.0,
+    "rain": 61.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:24:00",
+    "temperature": 26.5,
+    "humidity": 91.0,
+    "soil": 72.0,
+    "rain": 61.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:24:24",
+    "temperature": 26.5,
+    "humidity": 91.0,
+    "soil": 72.0,
+    "rain": 64.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:26:00",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 60.0,
+    "rain": 69.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:26:17",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 56.0,
+    "rain": 69.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:26:34",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 54.0,
+    "rain": 68.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:26:50",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 53.0,
+    "rain": 67.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:27:06",
+    "temperature": 25.6,
+    "humidity": 95.0,
+    "soil": 56.0,
+    "rain": 66.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:27:22",
+    "temperature": 25.6,
+    "humidity": 95.0,
+    "soil": 56.0,
+    "rain": 66.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:27:38",
+    "temperature": 25.3,
+    "humidity": 95.0,
+    "soil": 56.0,
+    "rain": 67.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:27:57",
+    "temperature": 25.2,
+    "humidity": 95.0,
+    "soil": 55.0,
+    "rain": 67.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:28:13",
+    "temperature": 25.3,
+    "humidity": 95.0,
+    "soil": 66.0,
+    "rain": 66.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:28:33",
+    "temperature": 25.3,
+    "humidity": 95.0,
+    "soil": 64.0,
+    "rain": 70.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:28:49",
+    "temperature": 25.5,
+    "humidity": 95.0,
+    "soil": 53.0,
+    "rain": 70.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:29:05",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 50.0,
+    "rain": 70.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:29:21",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 54.0,
+    "rain": 68.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:29:38",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 54.0,
+    "rain": 67.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:29:54",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 54.0,
+    "rain": 66.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:30:10",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 53.0,
+    "rain": 66.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:30:26",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 54.0,
+    "rain": 66.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:30:42",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 55.0,
+    "rain": 66.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:30:58",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 56.0,
+    "rain": 66.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:31:15",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 57.0,
+    "rain": 67.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:31:31",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 55.0,
+    "rain": 76.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:31:47",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 51.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:32:03",
+    "temperature": 26.6,
+    "humidity": 95.0,
+    "soil": 52.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:32:19",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 53.0,
+    "rain": 71.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:32:35",
+    "temperature": 24.0,
+    "humidity": 95.0,
+    "soil": 57.0,
+    "rain": 74.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:32:51",
+    "temperature": 24.2,
+    "humidity": 95.0,
+    "soil": 55.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:33:07",
+    "temperature": 24.2,
+    "humidity": 95.0,
+    "soil": 57.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:33:23",
+    "temperature": 24.2,
+    "humidity": 95.0,
+    "soil": 57.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:33:39",
+    "temperature": 24.2,
+    "humidity": 95.0,
+    "soil": 58.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:33:55",
+    "temperature": 24.2,
+    "humidity": 95.0,
+    "soil": 60.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:34:11",
+    "temperature": 24.2,
+    "humidity": 95.0,
+    "soil": 60.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:34:27",
+    "temperature": 24.2,
+    "humidity": 95.0,
+    "soil": 61.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:34:43",
+    "temperature": 24.2,
+    "humidity": 95.0,
+    "soil": 62.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:34:59",
+    "temperature": 24.0,
+    "humidity": 95.0,
+    "soil": 61.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:35:15",
+    "temperature": 24.0,
+    "humidity": 95.0,
+    "soil": 61.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:35:31",
+    "temperature": 24.0,
+    "humidity": 95.0,
+    "soil": 61.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:35:48",
+    "temperature": 24.0,
+    "humidity": 95.0,
+    "soil": 61.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:36:04",
+    "temperature": 24.0,
+    "humidity": 95.0,
+    "soil": 61.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:36:20",
+    "temperature": 24.0,
+    "humidity": 95.0,
+    "soil": 59.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:36:37",
+    "temperature": 26.8,
+    "humidity": 95.0,
+    "soil": 57.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:36:53",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 56.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:37:09",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 58.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:37:25",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 56.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:37:41",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 55.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:37:57",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 53.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:38:13",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 53.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:38:29",
+    "temperature": 26.2,
+    "humidity": 95.0,
+    "soil": 52.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:38:46",
+    "temperature": 26.2,
+    "humidity": 95.0,
+    "soil": 56.0,
+    "rain": 76.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:39:02",
+    "temperature": 26.2,
+    "humidity": 95.0,
+    "soil": 50.0,
+    "rain": 75.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:39:18",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 50.0,
+    "rain": 74.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:39:34",
+    "temperature": 24.2,
+    "humidity": 95.0,
+    "soil": 48.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:39:50",
+    "temperature": 24.0,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:40:06",
+    "temperature": 26.8,
+    "humidity": 95.0,
+    "soil": 42.0,
+    "rain": 72.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:40:22",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 71.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:40:38",
+    "temperature": 26.2,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 71.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:40:54",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:41:11",
+    "temperature": 25.9,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:41:27",
+    "temperature": 24.5,
+    "humidity": 95.0,
+    "soil": 45.0,
+    "rain": 71.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:41:43",
+    "temperature": 25.3,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:41:57",
+    "temperature": 25.3,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 68.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:42:13",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 68.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:42:30",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 66.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:42:47",
+    "temperature": 25.0,
+    "humidity": 95.0,
+    "soil": 48.0,
+    "rain": 65.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:43:03",
+    "temperature": 24.7,
+    "humidity": 95.0,
+    "soil": 48.0,
+    "rain": 70.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:47:49",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 42.0,
+    "rain": 76.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:48:05",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 76.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:48:21",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 76.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:48:37",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 76.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:48:53",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 42.0,
+    "rain": 77.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:49:09",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 77.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:49:29",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 77.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:49:45",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 77.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:50:01",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:50:17",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:50:33",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:50:50",
+    "temperature": 26.0,
+    "humidity": 95.0,
+    "soil": 41.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:51:06",
+    "temperature": 25.9,
+    "humidity": 95.0,
+    "soil": 40.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:52:07",
+    "temperature": 27.8,
+    "humidity": 95.0,
+    "soil": 78.0,
+    "rain": 78.0,
+    "dryness": 0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:52:12",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 49.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:52:14",
+    "temperature": 27.7,
+    "humidity": 95.0,
+    "soil": 51.0,
+    "rain": 78.5,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:52:28",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 49.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:52:47",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 49.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:53:03",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 49.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:53:23",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 48.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:53:39",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 48.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:53:55",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:54:11",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:54:27",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:54:43",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:55:02",
+    "temperature": 25.8,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:55:18",
+    "temperature": 25.9,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:55:35",
+    "temperature": 25.9,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:55:51",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:56:07",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:56:23",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:56:40",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 45.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:56:56",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:57:12",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 45.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:57:29",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:57:45",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:58:01",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:58:17",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:58:33",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:58:49",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:59:05",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:59:21",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 17:59:38",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 79.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:07:57",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 75.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:07:57",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 77.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:07:58",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 74.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:07:58",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 45.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:07:59",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 42.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:07:59",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 41.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:07:59",
+    "temperature": 26.2,
+    "humidity": 95.0,
+    "soil": 41.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:00",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 41.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:00",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 42.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:00",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 42.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:01",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 42.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:01",
+    "temperature": 26.2,
+    "humidity": 95.0,
+    "soil": 42.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:02",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:02",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:02",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:03",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 42.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:03",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 42.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:04",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:17",
+    "temperature": 26.2,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:08:34",
+    "temperature": 26.2,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:09:22",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 78.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:09:34",
+    "temperature": 26.1,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 74.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:09:50",
+    "temperature": 26.2,
+    "humidity": 95.0,
+    "soil": 43.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:10:06",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:10:23",
+    "temperature": 26.4,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 74.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:10:39",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 45.0,
+    "rain": 74.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:10:55",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 74.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:11:12",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:11:27",
+    "temperature": 26.4,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 73.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:12:01",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 75.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:12:17",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 75.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:13:08",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 62.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:13:32",
+    "temperature": 26.8,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 56.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:14:06",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 49.0,
+    "rain": 54.0,
+    "dryness": 0.0,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:15:18",
+    "temperature": 26.3,
+    "humidity": 95.0,
+    "soil": 44.0,
+    "rain": 44.0,
+    "dryness": 27.22,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:15:40",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 49.0,
+    "rain": 43.0,
+    "dryness": 25.1,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:15:58",
+    "temperature": 26.5,
+    "humidity": 95.0,
+    "soil": 50.0,
+    "rain": 37.0,
+    "dryness": 24.9,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:16:16",
+    "temperature": 26.8,
+    "humidity": 95.0,
+    "soil": 61.0,
+    "rain": 38.0,
+    "dryness": 22.82,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:16:33",
+    "temperature": 24.0,
+    "humidity": 95.0,
+    "soil": 58.0,
+    "rain": 38.0,
+    "dryness": 23.5,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:16:51",
+    "temperature": 24.0,
+    "humidity": 95.0,
+    "soil": 57.0,
+    "rain": 38.0,
+    "dryness": 23.7,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:17:10",
+    "temperature": 26.8,
+    "humidity": 95.0,
+    "soil": 57.0,
+    "rain": 38.0,
+    "dryness": 23.62,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:17:52",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 58.0,
+    "rain": 38.0,
+    "dryness": 23.62,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:18:09",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 60.0,
+    "rain": 37.0,
+    "dryness": 22.98,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:18:11",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 57.0,
+    "rain": 38.0,
+    "dryness": 23.58,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:18:26",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 59.0,
+    "rain": 37.0,
+    "dryness": 23.18,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:18:41",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 58.0,
+    "rain": 37.0,
+    "dryness": 23.38,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:18:58",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 56.0,
+    "rain": 37.0,
+    "dryness": 23.78,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:19:14",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 52.0,
+    "rain": 37.0,
+    "dryness": 24.58,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:19:31",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 50.0,
+    "rain": 37.0,
+    "dryness": 24.98,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:19:47",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 49.0,
+    "rain": 36.0,
+    "dryness": 25.18,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:20:07",
+    "temperature": 26.7,
+    "humidity": 95.0,
+    "soil": 48.0,
+    "rain": 37.0,
+    "dryness": 25.38,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:20:23",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 36.0,
+    "dryness": 25.58,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:20:42",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 36.0,
+    "dryness": 25.58,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:20:59",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 49.0,
+    "rain": 36.0,
+    "dryness": 25.18,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:21:15",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 49.0,
+    "rain": 34.0,
+    "dryness": 25.18,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:21:32",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 48.0,
+    "rain": 34.0,
+    "dryness": 25.38,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:21:48",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 34.0,
+    "dryness": 25.58,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:22:05",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 35.0,
+    "dryness": 25.58,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:22:22",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 35.0,
+    "dryness": 25.58,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:22:38",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 35.0,
+    "dryness": 25.58,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:22:54",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 47.0,
+    "rain": 35.0,
+    "dryness": 25.58,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:23:11",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 46.0,
+    "rain": 34.0,
+    "dryness": 25.78,
+    "motor_status": 0
+  },
+  {
+    "timestamp": "2025-04-19 18:23:27",
+    "temperature": 23.7,
+    "humidity": 95.0,
+    "soil": 45.0,
+    "rain": 34.0,
+    "dryness": 25.98,
+    "motor_status": 0
+  }
+]

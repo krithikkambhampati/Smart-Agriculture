@@ -65,7 +65,7 @@
       justify-content: space-between;
     }
     .graph-container {
-      flex: 1;
+      width: 100%;
       min-width: 300px;
     }
     .graph-container h2 {
@@ -230,6 +230,9 @@
     <!-- Replace the existing <div class="section settings"> with this -->
 <div class="section settings">
   <h2>Settings</h2>
+
+
+
   <div class="controls">
     <select id="cropSelect">
       <option value="wheat">Wheat</option>
@@ -244,10 +247,17 @@
       <option value="potato">Potato</option>
     </select>
     <button id="updateCropBtn" class="button" onclick="updateCropType()">Update Crop</button>
+    <input type="text" id="newCropName" placeholder="New Crop Name" style="padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-size: 1em; margin-bottom: 10px;">
+    <input type="number" id="newCropThreshold" placeholder="Threshold (0-100)" min="0" max="100" style="padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-size: 1em; margin-bottom: 10px;">
+    <button id="addCropBtn" class="button" onclick="addCrop()">Add Crop</button>
+    <button id="deleteCropBtn" class="button" onclick="deleteCrop()">Delete Crop</button>
     <button id="overrideOn" class="button" onclick="setManualOverride('on')">Manual Override On</button>
     <button id="overrideOff" class="button" onclick="setManualOverride('off')">Manual Override Off</button>
     <button id="removeOverride" class="button" onclick="removeManualOverride()">Remove Manual Override</button>
   </div>
+
+
+
   <div class="threshold-display" id="thresholdDisplay">Current Threshold: Loading...</div>
   <div class="controls" style="margin-top: 20px;">
     <h3>View Historical Data</h3>
@@ -953,30 +963,33 @@
         };
 
         ws.onmessage = (event) => {
-          console.log('Received WebSocket data:', event.data);
-          try {
-            const data = JSON.parse(event.data);
-            if (!data || typeof data !== 'object') {
-              console.error('Invalid WebSocket data:', data);
-              showStatusMessage('Received invalid data from server', 'error');
-              return;
-            }
-            console.debug('Parsed data:', {
-              temperature: data.temperature,
-              humidity: data.humidity,
-              soil: data.soil,
-              rain: data.rain,
-              dryness: data.dryness,
-              motor_status: data.motor_status,
-              crop_type: data.crop_type,
-            });
-            updateInterface(data);
-          } catch (error) {
-            console.error('Error parsing WebSocket data:', error);
-            showStatusMessage('Error parsing data from server', 'error');
-          }
-        };
-
+  console.log('Received WebSocket data:', event.data);
+  try {
+    const data = JSON.parse(event.data);
+    if (!data || typeof data !== 'object') {
+      console.error('Invalid WebSocket data:', data);
+      showStatusMessage('Received invalid data from server', 'error');
+      return;
+    }
+    if (data.crop_thresholds) {
+      updateCropDropdown(data.crop_thresholds);
+    } else {
+      console.debug('Parsed data:', {
+        temperature: data.temperature,
+        humidity: data.humidity,
+        soil: data.soil,
+        rain: data.rain,
+        dryness: data.dryness,
+        motor_status: data.motor_status,
+        crop_type: data.crop_type,
+      });
+      updateInterface(data);
+    }
+  } catch (error) {
+    console.error('Error parsing WebSocket data:', error);
+    showStatusMessage('Error parsing data from server', 'error');
+  }
+};
         ws.onclose = (event) => {
           console.log('WebSocket connection closed', event.code, event.reason);
           if (retryCount < maxRetries) {
@@ -1078,6 +1091,91 @@
       }
     };
 
+    window.addCrop = async function () {
+  const cropName = document.getElementById('newCropName').value.trim();
+  const threshold = parseFloat(document.getElementById('newCropThreshold').value);
+
+  if (!cropName) {
+    showStatusMessage('Crop name cannot be empty', 'error');
+    return;
+  }
+  if (isNaN(threshold) || threshold < 0 || threshold > 100) {
+    showStatusMessage('Threshold must be between 0 and 100', 'error');
+    return;
+  }
+
+  try {
+    showStatusMessage(`Adding crop ${cropName}...`, 'success');
+    const response = await fetch('/add-crop', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: cropName, threshold: threshold }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    showStatusMessage(result.status, 'success');
+    document.getElementById('newCropName').value = '';
+    document.getElementById('newCropThreshold').value = '';
+  } catch (error) {
+    console.error('Error adding crop:', error);
+    showStatusMessage(`Failed to add crop: ${error.message}`, 'error');
+  }
+};
+
+window.deleteCrop = async function () {
+  const cropName = cropSelect.value;
+  try {
+    showStatusMessage(`Deleting crop ${cropName}...`, 'success');
+    const response = await fetch('/delete-crop', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: cropName, threshold: 0 }), // Threshold is ignored
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    showStatusMessage(result.status, 'success');
+  } catch (error) {
+    console.error('Error deleting crop:', error);
+    showStatusMessage(`Failed to delete crop: ${error.message}`, 'error');
+  }
+};
+
+function updateCropDropdown(data) {
+  try {
+    const select = document.getElementById('cropSelect');
+    const thresholdDisplay = document.getElementById('thresholdDisplay');
+    const currentValue = select.value;
+
+    // Update cropThresholds with new data
+    Object.keys(cropThresholds).forEach(key => delete cropThresholds[key]); // Clear existing
+    Object.assign(cropThresholds, data);
+
+    // Rebuild dropdown
+    select.innerHTML = ''; // Clear existing options
+    Object.keys(data).forEach(crop => {
+      const option = document.createElement('option');
+      option.value = crop;
+      option.textContent = crop.charAt(0).toUpperCase() + crop.slice(1);
+      select.appendChild(option);
+    });
+
+    // Restore previous selection if still valid, else default to wheat
+    select.value = data.hasOwnProperty(currentValue) ? currentValue : 'wheat';
+    const threshold = cropThresholds[select.value] || 35;
+    thresholdDisplay.textContent = `Current Threshold: ${threshold}`;
+  } catch (error) {
+    console.error('Error updating crop dropdown:', error);
+    showStatusMessage('Failed to update crop list', 'error');
+  }
+}
     window.showHistoricalGraphs = showHistoricalGraphs;
 });
   </script>
