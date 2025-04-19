@@ -227,28 +227,68 @@
         </div>
       </div>
     </div>
-    <div class="section settings">
-      <h2>Settings</h2>
-      <div class="controls">
-        <select id="cropSelect">
-          <option value="wheat">Wheat</option>
-          <option value="sugarcane">Sugarcane</option>
-          <option value="rice">Rice</option>
-          <option value="maize">Maize</option>
-          <option value="cotton">Cotton</option>
-          <option value="pulses">Pulses</option>
-          <option value="millets">Millets</option>
-          <option value="mustard">Mustard</option>
-          <option value="groundnut">Groundnut</option>
-          <option value="potato">Potato</option>
-        </select>
-        <button id="updateCropBtn" class="button" onclick="updateCropType()">Update Crop</button>
-        <button id="overrideOn" class="button" onclick="setManualOverride('on')">Manual Override On</button>
-        <button id="overrideOff" class="button" onclick="setManualOverride('off')">Manual Override Off</button>
-        <button id="removeOverride" class="button" onclick="removeManualOverride()">Remove Manual Override</button>
+    <!-- Replace the existing <div class="section settings"> with this -->
+<div class="section settings">
+  <h2>Settings</h2>
+  <div class="controls">
+    <select id="cropSelect">
+      <option value="wheat">Wheat</option>
+      <option value="sugarcane">Sugarcane</option>
+      <option value="rice">Rice</option>
+      <option value="maize">Maize</option>
+      <option value="cotton">Cotton</option>
+      <option value="pulses">Pulses</option>
+      <option value="millets">Millets</option>
+      <option value="mustard">Mustard</option>
+      <option value="groundnut">Groundnut</option>
+      <option value="potato">Potato</option>
+    </select>
+    <button id="updateCropBtn" class="button" onclick="updateCropType()">Update Crop</button>
+    <button id="overrideOn" class="button" onclick="setManualOverride('on')">Manual Override On</button>
+    <button id="overrideOff" class="button" onclick="setManualOverride('off')">Manual Override Off</button>
+    <button id="removeOverride" class="button" onclick="removeManualOverride()">Remove Manual Override</button>
+  </div>
+  <div class="threshold-display" id="thresholdDisplay">Current Threshold: Loading...</div>
+  <div class="controls" style="margin-top: 20px;">
+    <h3>View Historical Data</h3>
+    <button class="button" onclick="showHistoricalGraphs('day1_morning')">Day 1 Morning</button>
+    <button class="button" onclick="showHistoricalGraphs('day1_evening')">Day 1 Evening</button>
+    <button class="button" onclick="showHistoricalGraphs('day2_morning')">Day 2 Morning</button>
+    <button class="button" onclick="showHistoricalGraphs('day2_evening')">Day 2 Evening</button>
+    <button class="button" onclick="showHistoricalGraphs('day3_morning')">Day 3 Morning</button>
+    <button class="button" onclick="showHistoricalGraphs('day3_evening')">Day 3 Evening</button>
+  </div>
+  <div id="statusMessage" class="status-message"></div>
+</div>
+
+    <div class="section" id="historicalGraphs" style="display: none;">
+      <h2>Historical Data</h2>
+      <div class="graph-row">
+        <div class="graph-container">
+          <h2>Temperature Graph</h2>
+          <canvas id="historicalTempChart" class="graph"></canvas>
+        </div>
+        <div class="graph-container">
+          <h2>Humidity Graph</h2>
+          <canvas id="historicalHumChart" class="graph"></canvas>
+        </div>
+        <div class="graph-container">
+          <h2>Soil Moisture Graph</h2>
+          <canvas id="historicalSoilChart" class="graph"></canvas>
+        </div>
+        <div class="graph-container">
+          <h2>Rain Level Graph</h2>
+          <canvas id="historicalRainChart" class="graph"></canvas>
+        </div>
+        <div class="graph-container">
+          <h2>Dryness Graph</h2>
+          <canvas id="historicalDryChart" class="graph"></canvas>
+        </div>
+        <div class="graph-container">
+          <h2>Motor Status Graph</h2>
+          <canvas id="historicalMotorChart" class="graph"></canvas>
+        </div>
       </div>
-      <div class="threshold-display" id="thresholdDisplay">Current Threshold: Loading...</div>
-      <div id="statusMessage" class="status-message"></div>
     </div>
   </div>
 
@@ -262,6 +302,7 @@
 
     let gauges = {};
     let charts = {};
+    let historicalCharts = {};
 
     const overrideOnBtn = document.getElementById('overrideOn');
     const overrideOffBtn = document.getElementById('overrideOff');
@@ -276,15 +317,15 @@
 
     const cropThresholds = {
       wheat: 45,
-    sugarcane: 40,
-    rice:35,
-    maize:55,
-    cotton:50,
-    pulses:60,
-    millets:65,
-    mustard:50,
-    groundnut:55,
-    potato:40
+      sugarcane: 40,
+      rice: 35,
+      maize: 55,
+      cotton: 50,
+      pulses: 60,
+      millets: 65,
+      mustard: 50,
+      groundnut: 55,
+      potato: 40
     };
 
     function safeValue(val, min = 0, max = 100) {
@@ -513,6 +554,138 @@
       }
     }
 
+    function initializeHistoricalCharts() {
+  try {
+    const defaultOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: { color: '#e8ecef' },
+          ticks: { color: '#34495e', stepSize: 10 },
+        },
+        x: {
+          grid: { color: '#e8ecef' },
+          ticks: {
+            color: '#34495e',
+            maxRotation: 45,
+            minRotation: 45,
+            maxTicksLimit: 20,
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          labels: { color: '#34495e', font: { size: 14 } },
+        },
+      },
+      animation: { duration: 500 },
+    };
+
+    const historicalChartConfig = [
+      {
+        id: 'historicalTempChart',
+        label: 'Temperature (°C)',
+        borderColor: '#3498db',
+        backgroundColor: 'rgba(52, 152, 219, 0.2)',
+        minY: -10,
+        maxY: 50,
+        sensorType: 'temp',
+      },
+      {
+        id: 'historicalHumChart',
+        label: 'Humidity (%)',
+        borderColor: '#2ecc71',
+        backgroundColor: 'rgba(46, 204, 113, 0.2)',
+        minY: 0,
+        maxY: 100,
+        sensorType: 'hum',
+      },
+      {
+        id: 'historicalSoilChart',
+        label: 'Soil Moisture (%)',
+        borderColor: '#e67e22',
+        backgroundColor: 'rgba(230, 126, 34, 0.2)',
+        minY: 0,
+        maxY: 100,
+        sensorType: 'soil',
+      },
+      {
+        id: 'historicalRainChart',
+        label: 'Rain Level (%)',
+        borderColor: '#9b59b6',
+        backgroundColor: 'rgba(155, 89, 182, 0.2)',
+        minY: 0,
+        maxY: 100,
+        sensorType: 'rain',
+      },
+      {
+        id: 'historicalDryChart',
+        label: 'Dryness',
+        borderColor: '#f1c40f',
+        backgroundColor: 'rgba(241, 196, 15, 0.2)',
+        minY: 0,
+        maxY: 100,
+        sensorType: 'dry',
+      },
+      {
+        id: 'historicalMotorChart',
+        label: 'Motor Status (On/Off)',
+        borderColor: '#e74c3c',
+        backgroundColor: 'rgba(231, 76, 60, 0.2)',
+        minY: 0,
+        maxY: 1,
+        sensorType: 'motor',
+      },
+    ];
+
+    const charts = {};
+    historicalChartConfig.forEach((config) => {
+      charts[config.sensorType] = new Chart(document.getElementById(config.id), {
+        type: 'line',
+        data: {
+          labels: [],
+          datasets: [
+            {
+              label: config.label,
+              data: [],
+              borderColor: config.borderColor,
+              borderWidth: 2,
+              tension: 0.4,
+              fill: true,
+              backgroundColor: config.backgroundColor,
+              pointRadius: 4,
+              pointBackgroundColor: config.borderColor,
+            },
+          ],
+        },
+        options: {
+          ...defaultOptions,
+          scales: {
+            ...defaultOptions.scales,
+            y: {
+              ...defaultOptions.scales.y,
+              min: config.minY,
+              max: config.maxY,
+              ticks: {
+                ...defaultOptions.scales.y.ticks,
+                stepSize: config.sensorType === 'motor' ? 1 : 10,
+              },
+            },
+          },
+        },
+      });
+    });
+
+    console.log('Historical charts initialized successfully');
+    return charts;
+  } catch (error) {
+    console.error('Historical chart initialization failed:', error);
+    showStatusMessage('Failed to initialize historical charts', 'error');
+    return {};
+  }
+}
     function resetCharts() {
       try {
         Object.values(charts).forEach((chart) => {
@@ -525,6 +698,21 @@
         console.log('Charts reset successfully');
       } catch (error) {
         console.error('Error resetting charts:', error);
+      }
+    }
+
+    function resetHistoricalCharts() {
+      try {
+        Object.values(historicalCharts).forEach((chart) => {
+          if (chart && chart.data) {
+            chart.data.labels = [];
+            chart.data.datasets[0].data = [];
+            chart.update('none');
+          }
+        });
+        console.log('Historical charts reset successfully');
+      } catch (error) {
+        console.error('Error resetting historical charts:', error);
       }
     }
 
@@ -694,6 +882,59 @@
       }
     }
 
+    async function showHistoricalGraphs(button) {
+  try {
+    showStatusMessage(`Loading ${button.replace('_', ' ')} data...`, 'success');
+    const response = await fetch(`/static/graph_data/${button}.json`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (!data || data.length === 0) {
+      throw new Error('No data found');
+    }
+
+    if (!historicalCharts.temp) {
+      historicalCharts = initializeHistoricalCharts();
+    } else {
+      resetHistoricalCharts();
+    }
+
+    const labels = data.map(point => {
+      const date = new Date(point.timestamp);
+      return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    });
+
+    historicalCharts.temp.data.labels = labels;
+    historicalCharts.temp.data.datasets[0].data = data.map(point => safeValue(point.temperature, -10, 50));
+    historicalCharts.hum.data.labels = labels;
+    historicalCharts.hum.data.datasets[0].data = data.map(point => safeValue(point.humidity, 0, 100));
+    historicalCharts.soil.data.labels = labels;
+    historicalCharts.soil.data.datasets[0].data = data.map(point => safeValue(point.soil, 0, 100));
+    historicalCharts.rain.data.labels = labels;
+    historicalCharts.rain.data.datasets[0].data = data.map(point => safeValue(point.rain, 0, 100));
+    historicalCharts.dry.data.labels = labels;
+    historicalCharts.dry.data.datasets[0].data = data.map(point => safeValue(point.dryness, 0, 100));
+    historicalCharts.motor.data.labels = labels;
+    historicalCharts.motor.data.datasets[0].data = data.map(point => safeValue(point.motor_status, 0, 1));
+
+    historicalCharts.temp.update();
+    historicalCharts.hum.update();
+    historicalCharts.soil.update();
+    historicalCharts.rain.update();
+    historicalCharts.dry.update();
+    historicalCharts.motor.update();
+
+    document.getElementById('historicalGraphs').style.display = 'block';
+    showStatusMessage(`Loaded ${button.replace('_', ' ')} data`, 'success');
+  } catch (error) {
+    console.error(`Error loading ${button} data:`, error);
+    showStatusMessage(`Failed to load ${button.replace('_', ' ')} data`, 'error');
+  }
+}
     function initializeWebSocket() {
       const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
       const wsUrl = `${wsProtocol}//${window.location.host}/ws`;
@@ -836,8 +1077,9 @@
         showStatusMessage(`Failed to update crop type to ${crop}`, 'error');
       }
     };
-  });
 
+    window.showHistoricalGraphs = showHistoricalGraphs;
+});
   </script>
 </body>
 </html>
